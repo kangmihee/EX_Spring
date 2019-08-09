@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	<!-- 생성자 주입 -->
+	<bean id="ssImpl" class="controller.SelectSeviceImpl">
+		<constructor-arg>
+			<ref bean="daoImpl"/>
+		</constructor-arg>
+	</bean>
+	<bean id="daoImpl" class="model.DataDaoImpl"></bean>
+	<!--
+	 위의 코드는 객체생성 의미 : 
+	 DataDaoImpl daoImpl = new DataDaoImpl() 의미와 같다.
+	-->
+</beans>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="myProcess" class="pack.MyProcess">
+		<property name="nai" value="25"/> <!-- name은 setter를 의미한다. -->
+		<property name="name">
+			<value>홍길동</value>  <!-- value를 주는 방법은 2개 -->
+		</property>
+	  	<!--  <property name="class1" ref="tclass"/> -->
+	  	<property name="class1">
+	  		<bean class="pack.TestClass"/> <!-- reference방법은 2가지 -->
+	  	</property>
+	  	
+	</bean> 
+	<bean id="tclass" class="pack.TestClass"/> <!-- 위 방법 쓸경우 필요 없음 -->
+	
+	
+</beans>
